@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	 xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+   http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+<bean id="address" class="com.cg.propertyinjection.beans.Address" scope="prototype">
+<constructor-arg name="city" value="Hyderabad" />
+<constructor-arg name="state" value="TG" />
+<constructor-arg name="country" value="India" />
+<constructor-arg name="pinCode" value="123456" />
+</bean>
+<bean id="associate" class="com.cg.propertyinjection.beans.Associate" scope="prototype">
+<constructor-arg name="associateId" value="111" />
+<constructor-arg name="firstName" value="Srividya" />
+<constructor-arg name="lastName" value="Basavoju" />
+<constructor-arg name="address" ref="address" />
+</bean>
+</beans>
